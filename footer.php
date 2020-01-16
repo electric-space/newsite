@@ -22,9 +22,7 @@
         echo '</div>
                 </main>
                     </div>
-                        </div>
-                            </div>
-                                </div>';
+                        </div>';
     }else{
         
         
