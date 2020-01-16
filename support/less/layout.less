@@ -1,0 +1,86 @@
+/**
+ * Layout
+ */
+
+
+
+
+
+/**
+ * Fader
+ * This fades the page in.
+ * <script>$(document).ready(function(){ $('body').addClass('loaded').removeClass('hidden'); });</script>
+ */
+
+
+body.hidden{
+    opacity: 0;
+}
+
+
+body.loaded{
+    transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+
+}
+
+
+
+
+
+html{
+    background:lighten( @grey, 60%);  //uncomment to fade pages from black
+    background:#000;
+
+}
+
+
+body{
+    background:lighten( @grey, 60%);
+}
+
+
+
+.site-header{
+    background-color:@white;
+}
+
+
+.page-wrapper{
+    padding: @baseline;
+    background:@white;
+}
+
+
+.full-width section{
+    padding-top:24px;
+    padding-bottom:24px;
+}
+
+
+
+
+.hentry{
+    margin:@baseline*2 0 0;
+    &:first-of-type{
+        margin-top:0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

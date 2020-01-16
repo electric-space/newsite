@@ -1,0 +1,110 @@
+/*
+ * Contact form 7
+ */
+
+
+input[type],
+textarea{
+    width:100%;
+    border-radius: 0;
+    padding:@baseline/3 @baseline/2;
+    font-size:1.6rem;
+    font-family: @font-body;
+    border:none;
+    .clearstyle();
+    .box-sizing(border-box);
+
+}
+
+
+input[type="submit"]{
+    width:auto;
+    color:@white;
+    line-height:1;
+    background:@black;
+    padding:11px;
+
+}   
+
+
+input[type]:focus,
+textarea:focus{
+    outline:1px solid @copy;
+    outline-offset:0;
+}
+
+input[type="submit"]:focus{
+    outline:none;
+}
+
+
+
+/**
+ * Search form
+ */
+.search-form{
+    position:relative;
+}
+
+/*
+main .search-form{
+    width:60%;
+    margin-top:@baseline;
+}
+*/
+
+
+
+aside{
+    .search-form{
+        width:100%;
+        position: relative;
+    }
+    
+}
+
+
+input.search-field{
+    border:1px solid @grey;
+    padding-right:2em;
+    &:focus{
+        outline: none;
+        border-color:@accent;
+    }
+}
+
+.submit-wrapper{
+    position: absolute;
+    top:0;
+    right:0;
+    line-height:1;
+    height:34px;
+    span{
+        height:34px;
+        width:34px;
+        cursor:pointer;
+    }
+    input[type="submit"]{
+        padding:0;
+        height:34px;
+        width:34px;
+        background:transparent;
+        color:@copy;
+        cursor:pointer;
+        
+    }
+}
+
+
+
+
+
+div.wpcf7-response-output{
+    margin:@baseline 0 0;
+}
+
+/* Custom CF7 Loader */
+div.wpcf7 .ajax-loader {
+    background-image: url( '../../images/ajax-loader.gif');
+    margin-left: 10px;
+}

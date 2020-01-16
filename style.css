@@ -1,0 +1,613 @@
+
+/* THIS CSS WAS COMPILED AND OPTIMIZED, USING THE WP COMPILER PLUGIN */
+/* https://bytes.co */
+/* Last Compiled: 2019-12-05 6:03:10 UTC */
+
+/*!
+Theme Name: newsite 2
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: newsite
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+newsite is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/**
+ * Sub Reset
+ */
+.uk-container {
+  box-sizing: border-box;
+  max-width: 980px;
+  padding: 0 24px;
+}
+/* Large screen and bigger */
+@media (min-width: 1220px) {
+  .uk-container {
+    max-width: 1200px;
+    padding: 0 24px;
+  }
+}
+/* Grid gutter
+ ========================================================================== */
+/*
+ * Default gutter
+ */
+/* Horizontal */
+.uk-grid {
+  margin-left: -24px;
+}
+.uk-grid > * {
+  padding-left: 24px;
+}
+/* Vertical */
+.uk-grid + .uk-grid,
+.uk-grid-margin,
+.uk-grid > .uk-grid-margin,
+.uk-grid > * > .uk-panel + .uk-panel {
+  margin-top: 24px;
+}
+/* Large screen and bigger */
+@media (min-width: 1220px) {
+  /* Horizontal */
+  .uk-grid {
+    margin-left: -24px;
+  }
+  .uk-grid > * {
+    padding-left: 24px;
+  }
+  /* Vertical */
+  .uk-grid + .uk-grid,
+  .uk-grid-margin,
+  .uk-grid > * > .uk-panel + .uk-panel {
+    margin-top: 24px;
+  }
+}
+/*
+ * Collapse gutter
+ */
+/* Horizontal */
+.uk-grid-collapse {
+  margin-left: 0;
+}
+.uk-grid-collapse > * {
+  padding-left: 0;
+}
+/* Vertical */
+.uk-grid-collapse + .uk-grid-collapse,
+.uk-grid-collapse > .uk-grid-margin,
+.uk-grid-collapse > * > .uk-panel + .uk-panel {
+  margin-top: 0;
+}
+/*
+ * Small gutter
+ */
+/* Horizontal */
+.uk-grid-small {
+  margin-left: -10px;
+}
+.uk-grid-small > * {
+  padding-left: 10px;
+}
+/* Vertical */
+.uk-grid-small + .uk-grid-small,
+.uk-grid-small > .uk-grid-margin,
+.uk-grid-small > * > .uk-panel + .uk-panel {
+  margin-top: 10px;
+}
+/*
+ * Medium gutter
+ */
+/* Horizontal */
+.uk-grid-medium {
+  margin-left: -24px;
+}
+.uk-grid-medium > * {
+  padding-left: 24px;
+}
+/* Vertical */
+.uk-grid-medium + .uk-grid-medium,
+.uk-grid-medium > .uk-grid-margin,
+.uk-grid-medium > * > .uk-panel + .uk-panel {
+  margin-top: 24px;
+}
+/*
+ * Large gutter
+ */
+/* Large screen and bigger */
+@media (min-width: 960px) {
+  /* Horizontal */
+  .uk-grid-large {
+    margin-left: -24px;
+  }
+  .uk-grid-large > * {
+    padding-left: 24px;
+  }
+  /* Vertical */
+  .uk-grid-large + .uk-grid-large,
+  .uk-grid-large-margin,
+  .uk-grid-large > * > .uk-panel + .uk-panel {
+    margin-top: 24px;
+  }
+}
+/* Extra Large screens */
+@media (min-width: 1220px) {
+  /* Horizontal */
+  .uk-grid-large {
+    margin-left: -48px;
+  }
+  .uk-grid-large > * {
+    padding-left: 48px;
+  }
+  /* Vertical */
+  .uk-grid-large + .uk-grid-large,
+  .uk-grid-large-margin,
+  .uk-grid-large > * > .uk-panel + .uk-panel {
+    margin-top: 48px;
+  }
+}
+/*
+ * Default
+ */
+.uk-margin {
+  margin-bottom: 24px;
+}
+* + .uk-margin {
+  margin-top: 24px !important;
+}
+.uk-margin-top {
+  margin-top: 24px !important;
+}
+.uk-margin-bottom {
+  margin-bottom: 24px !important;
+}
+.uk-margin-left {
+  margin-left: 24px !important;
+}
+.uk-margin-right {
+  margin-right: 24px !important;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 24px;
+  font-size: 1.4rem;
+  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+p:first-child {
+  margin-top: 0;
+}
+p,
+ul,
+ol {
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+/* Links */
+@media (max-width: 400px) {
+  main a[href^="mailto"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+}
+/*
+a:link,
+a:active,
+a:visited{
+    color:@copy;
+}
+
+a:hover{
+    color:lighten(@copy, 50%);
+}
+*/
+a.post-edit-link {
+  color: #0a0a0a;
+}
+a.post-edit-link:hover {
+  color: #0a0a0a;
+  text-decoration: underline;
+}
+.screen-reader-text:focus {
+  font-size: 1.6rem;
+}
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+/**
+ * type
+ */
+.caption-copy * {
+  color: #ffffff;
+}
+/**
+ * navigation
+ */
+nav.main-navigation {
+  clear: none;
+  float: none;
+  height: 38px;
+  width: 100%;
+}
+nav.main-navigation ul.menu {
+  list-style: none;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+nav.main-navigation ul.menu li {
+  display: inline-block;
+  margin: 0;
+}
+nav.main-navigation ul.menu li a {
+  font-size: 1.6rem;
+  padding: 12px 24px;
+  line-height: 1;
+  color: #4d4d4d;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+nav.main-navigation ul.menu li a:hover {
+  color: #4094f5;
+  text-decoration: none;
+}
+nav.main-navigation ul.menu li.current-menu-item a {
+  color: #4094f5;
+}
+.uk-offcanvas {
+  width: 100%;
+}
+.uk-offcanvas-bar {
+  width: inherit;
+}
+/*
+a.uk-navbar-toggle {
+    position: relative;
+    top: @baseline;
+    left: @baseline;
+    color: @copy;
+    padding:0;
+    margin:0;
+    height:auto;
+    float:none;
+}
+
+
+
+a.mobile-close{
+    z-index: 2000;
+    color:@white;
+    &:hover{
+        color:lighten(@copy, 40%);
+    }
+}
+*/
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0 0;
+}
+.mobile-menu li {
+  margin: 24px 0 0;
+  padding: 0 0 0 24px;
+}
+.mobile-menu a {
+  font-size: 3rem;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  text-align: right;
+}
+.social-list li {
+  display: inline-block;
+  margin-left: 24px;
+}
+.social-list li a {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 6px;
+  background-color: #084994;
+  width: 12px;
+  height: 12px;
+  display: block;
+  text-align: center;
+  line-height: 12px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/**
+ * header
+ */
+/**
+ * Layout
+ */
+/**
+ * Fader
+ * This fades the page in.
+ * <script>$(document).ready(function(){ $('body').addClass('loaded').removeClass('hidden'); });</script>
+ */
+body.hidden {
+  opacity: 0;
+}
+body.loaded {
+  transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+html {
+  background: #e5e5e5;
+  background: #000;
+}
+body {
+  background: #e5e5e5;
+}
+.site-header {
+  background-color: #ffffff;
+}
+.page-wrapper {
+  padding: 24px;
+  background: #ffffff;
+}
+.full-width section {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.hentry {
+  margin: 48px 0 0;
+}
+.hentry:first-of-type {
+  margin-top: 0;
+}
+/*
+ * Contact form 7
+ */
+input[type],
+textarea {
+  width: 100%;
+  border-radius: 0;
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  width: auto;
+  color: #ffffff;
+  line-height: 1;
+  background: #000000;
+  padding: 11px;
+}
+input[type]:focus,
+textarea:focus {
+  outline: 1px solid #0a0a0a;
+  outline-offset: 0;
+}
+input[type="submit"]:focus {
+  outline: none;
+}
+/**
+ * Search form
+ */
+.search-form {
+  position: relative;
+}
+/*
+main .search-form{
+    width:60%;
+    margin-top:@baseline;
+}
+*/
+aside .search-form {
+  width: 100%;
+  position: relative;
+}
+input.search-field {
+  border: 1px solid #4d4d4d;
+  padding-right: 2em;
+}
+input.search-field:focus {
+  outline: none;
+  border-color: #084994;
+}
+.submit-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1;
+  height: 34px;
+}
+.submit-wrapper span {
+  height: 34px;
+  width: 34px;
+  cursor: pointer;
+}
+.submit-wrapper input[type="submit"] {
+  padding: 0;
+  height: 34px;
+  width: 34px;
+  background: transparent;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+div.wpcf7-response-output {
+  margin: 24px 0 0;
+}
+/* Custom CF7 Loader */
+div.wpcf7 .ajax-loader {
+  background-image: url('../../images/ajax-loader.gif');
+  margin-left: 10px;
+}
+/**
+ * Widgets - sidebar
+ */
+#secondary section {
+  margin: 24px 0 0;
+}
+#secondary section:first-child {
+  margin-top: 0;
+}
+.widget {
+  margin: 24px 0 0;
+}
+.widget:first-child {
+  margin-top: 0;
+}
+/**
+ *  footer 
+ */
+footer.site-footer {
+  padding: 24px 0;
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+.copyright--wrapper {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 0;
+}
+.copyright--wrapper li {
+  font-size: 1rem;
+}
+@media (min-width: 480px) {
+  .copyright--wrapper li {
+    display: inline;
+  }
+  .copyright--wrapper li:before {
+    content: '\00A0| ';
+  }
+  .copyright--wrapper li:first-child:before {
+    content: '';
+  }
+}
+/**
+ * RWD
+ */
+@media (max-width: 959px) {
+  .footer--wrapper {
+    display: block;
+    text-align: center;
+  }
+  .social-list {
+    text-align: center;
+  }
+  .social-list li {
+    margin: 0 12px 12px;
+  }
+}
+/*# sourceMappingURL=/Users/neilmickleburgh/Local Sites/newsite/app/public/wp-content/themes/newsite_2/style.css.map */
