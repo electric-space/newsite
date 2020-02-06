@@ -2,6 +2,7 @@
 	<input type="text" class="search-field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'twentyeleven' ); ?>" />
 	<div class="submit-wrapper">
     	<input type="submit" class="submit" name="submit" id="searchsubmit" value="" alt="Search" />
+        <!-- this restircts search to prodicts only <input type="hidden" name="post_type" value="product" /> -->
     	<span class="uk-form-icon" uk-icon="icon: search"></span>
 	</div>
 </form>
