@@ -79,7 +79,7 @@
     <?php get_template_part('support/partials/slideshow-uikit') ;?>
 
 
-    <main id="main" class="site-main" uk-height-viewport="expand: true">
+    <main id="main" class="site-main">
 
         <div class="uk-container">
             
