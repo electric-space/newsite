@@ -31,21 +31,24 @@ body.loaded{
 
 
 html{
-    background:lighten( @grey, 60%);  //uncomment to fade pages from black
-    background:#000;
+    background:#000; // to fade pages from black
 
 }
 
 
 body{
-    background:lighten( @grey, 60%);
+    background:@white;
 }
 
 
-
-.site-header{
-    background-color:@white;
+.site-main{
+    & > div{
+        background-color:@white;
+        padding-top:@baseline;
+        padding-bottom:@baseline;
+    }
 }
+
 
 
 .page-wrapper{
@@ -53,11 +56,6 @@ body{
     background:@white;
 }
 
-
-.full-width section{
-    padding-top:24px;
-    padding-bottom:24px;
-}
 
 
 

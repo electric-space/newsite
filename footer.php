@@ -12,27 +12,12 @@
 ?>
 
 
-<?php
-    /**
-     * Adds a container over the whole page, so restricts the width.
-     * Turn off in Theme Settings so we can add full-width stripes.
-     */
 
-    if( get_field('stripe', 'options') ){
-        echo '</div>
-                </main>
-                    </div>
-                        </div>';
-    }else{
-        
-        
-        echo '</main>';
-    };?>
+</div>
 
+</div>
 
-
-
-
+</main>
 
 
 

@@ -1,7 +1,7 @@
 
 /* THIS CSS WAS COMPILED AND OPTIMIZED, USING THE WP COMPILER PLUGIN */
 /* https://bytes.co */
-/* Last Compiled: 2019-12-05 6:03:10 UTC */
+/* Last Compiled: 2020-03-23 4:28:19 UTC */
 
 /*!
 Theme Name: newsite 2
@@ -212,7 +212,7 @@ p:first-child {
 p,
 ul,
 ol {
-  margin: 12px 0 0;
+  margin: 0 0 12px;
   line-height: 1.5;
 }
 /* Links */
@@ -263,6 +263,9 @@ a.post-edit-link:hover {
   margin-left: auto;
   margin-right: auto;
 }
+*:focus {
+  outline: 1px dotted red;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -310,13 +313,15 @@ a.post-edit-link:hover {
 .caption-copy * {
   color: #ffffff;
 }
+p.site-description {
+  margin: 0;
+}
 /**
  * navigation
  */
 nav.main-navigation {
   clear: none;
   float: none;
-  height: 38px;
   width: 100%;
 }
 nav.main-navigation ul.menu {
@@ -327,13 +332,11 @@ nav.main-navigation ul.menu {
 }
 nav.main-navigation ul.menu li {
   display: inline-block;
-  margin: 0;
+  margin: 0 0 0 24px;
 }
 nav.main-navigation ul.menu li a {
   font-size: 1.6rem;
-  padding: 12px 24px;
   line-height: 1;
-  color: #4d4d4d;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -343,8 +346,14 @@ nav.main-navigation ul.menu li a:hover {
   color: #4094f5;
   text-decoration: none;
 }
+nav.main-navigation ul.menu li:first-child {
+  margin-left: 0;
+}
 nav.main-navigation ul.menu li.current-menu-item a {
   color: #4094f5;
+}
+.home .main-navigation a {
+  color: #ffffff;
 }
 .uk-offcanvas {
   width: 100%;
@@ -426,6 +435,14 @@ a.mobile-close{
 /**
  * header
  */
+.site-header {
+  padding: 24px 0;
+}
+.home .site-header {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
 /**
  * Layout
  */
@@ -444,22 +461,19 @@ body.loaded {
   opacity: 1;
 }
 html {
-  background: #e5e5e5;
   background: #000;
 }
 body {
-  background: #e5e5e5;
+  background: #ffffff;
 }
-.site-header {
+.site-main > div {
   background-color: #ffffff;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .page-wrapper {
   padding: 24px;
   background: #ffffff;
-}
-.full-width section {
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 .hentry {
   margin: 48px 0 0;

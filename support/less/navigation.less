@@ -6,7 +6,7 @@ nav.main-navigation{
     //background-color:@accent;  
     clear:none;
     float:none;
-    height: 38px;
+
     width:100%;
     ul.menu{
         list-style: none;
@@ -15,17 +15,19 @@ nav.main-navigation{
         padding:0;
         li{
             display: inline-block;
-            margin:0;
+            margin:0 0 0 @baseline;
             a{
                 font-size:1.6rem;
-                padding:@baseline/2 @baseline;
                 line-height:1;
-                color:@grey;
+                
                 .fader();
                 &:hover{
                     color:lighten(@accent, 30);
                     text-decoration: none;
                 }
+            }
+            &:first-child{
+                margin-left:0;
             }
         }
         li.current-menu-item{
@@ -36,6 +38,9 @@ nav.main-navigation{
     }
 }
 
+.home .main-navigation a{
+    color:@white;
+}
 
 
 // mobile menu

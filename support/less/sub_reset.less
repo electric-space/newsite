@@ -199,7 +199,7 @@ p:first-child{
 
 
 p, ul,ol{
-    margin:@baseline/2 0 0;
+    margin:0 0 @baseline/2;
     line-height:1.5
 }
 
@@ -264,3 +264,14 @@ a.post-edit-link{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+// This is for testing, select :focus in browser dev tools and it print a border. Hide on go live.
+
+*:focus{
+    outline: 1px dotted red;
+}
+
+
+
+

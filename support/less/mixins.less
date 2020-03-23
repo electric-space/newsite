@@ -6,6 +6,14 @@
     appearance: none;
 }
 
+.formstyle(@args){
+    -webkit-appearance: @args;
+       -moz-appearance: @args;
+            appearance: @args;    
+}
+
+
+
 .fader() {
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;

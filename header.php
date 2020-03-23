@@ -75,42 +75,14 @@
 
     </header><!-- #masthead -->
 
-
-    <div class="uk-container">
-        <div class="uk-grid" uk-grid>
-            <div class="uk-width-1-1">
-                    <?php get_template_part('support/partials/slideshow-uikit') ;?>
-
-            </div>
-
-        </div>
-    </div>
+    
+    <?php get_template_part('support/partials/slideshow-uikit') ;?>
 
 
+    <main id="main" class="site-main" uk-height-viewport="expand: true">
 
-
-
-    <?php
-        /**
-         * Adds a container over the whole page, so restricts the width.
-         * Turn off in Theme Settings so we can add full-width stripes.
-         */
-
-        if( get_field('stripe', 'options') ):?>
-            <div class="uk-container">
-                <div class="page-wrapper">
-                    <main id="main" class="site-main">
-                        <div class="uk-grid" uk-grid>
-
-        <?php else: ;?>
-
-             <main id="main" class="site-main full-width">
-
-        <?php endif;
-
-    ;?>
-
-
-
+        <div class="uk-container">
+            
+            <div class="uk-grid" uk-grid>
 
 

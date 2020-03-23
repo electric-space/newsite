@@ -86,8 +86,10 @@ if ( ! function_exists( 'newsite_setup' ) ) :
 		) );
 		
 		
-		// Removes the margin-top on the HTML element
-		add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+		/**
+         * Removes the margin-top on the HTML element
+         */
+		//add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 		
 		
 		/**
