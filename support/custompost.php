@@ -1,12 +1,29 @@
-<?php 
+<?php
 
 
 
 
 // Register Custom Post Type
 function custom_post_type() {
-	
+
 	$txtdomain = 'newsite';
+
+	/**
+	 * minimal
+	 */
+	$labels = array(
+		'menu_name' => __( 'Notice Board', $txtdomain ),
+	);
+
+	$args = array(
+		'label'       => __( 'Notice Board', $txtdomain ),
+		'public'      => true,
+		'has_archive' => true,
+	);
+
+	register_post_type( 'Notice_Board', $args );
+
+
 
 	$labels = array(
 		'name'                  => _x( 'Directors', 'Post Type General Name', $txtdomain ),
@@ -51,7 +68,7 @@ function custom_post_type() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,		
+		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
