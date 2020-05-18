@@ -40,6 +40,22 @@ function get_id_url(){
     return $current_postid;
 }
 
+/**
+ * Current page highlight
+ * $args (the post/page ID)
+ */
+
+function get_current_page($args){
+
+    $id = get_id_url();
+
+    if( $args == $id ){
+        return 'class="current_page_item"';
+    }else{
+        return null;
+    }
+
+}
 
 
 /**
