@@ -216,29 +216,30 @@ function column_func( $atts, $content = null ) {
     // defaults
     $_align = '';
     $_width = '';
+    $_class = '';
 
     $args = (shortcode_atts( array(
         'align' => $_align,
-        'width' => $_width
+        'width' => $_width,
+        'class' => $_class
     ), $atts ) );
 
 
     // get attrs
-    if( $args['align'] ){
+    if( $args['align'] )
         $align = 'align'.$args['align'];
-    }
 
-    if( $args['width'] ){
+    if( $args['width'] )
         $width = 'style="width:'.$args['width'].'px"';
-    }
+    
+    if( $args['class'] )
+        $class = $args['class'];
 
 
-    return '<div class="page-column '.$align.'" '.$width.' >'.
-            do_shortcode($content).
-            '</div>';
+    return '<div class="page-column '.$align.' '.$class.'" '.$width.' >'.do_shortcode($content).'</div>';
 }
 
-add_shortcode( 'columns', 'column_func' );
+add_shortcode( 'column', 'column_func' );
 
 
 
