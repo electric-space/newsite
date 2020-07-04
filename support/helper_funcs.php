@@ -58,6 +58,27 @@ function get_current_page($args){
 }
 
 
+/* 
+ * Get file mod date to add to css as query string to help with cache
+ * Usage, call esmod_date({filename})
+ * Default {style.css}
+ */
+     
+function esmod_date($file="style.css"){
+    if( $file){
+        clearstatcache();
+        $file = get_template_directory().'/'.$file;
+        $lastModifiedTimestamp = filemtime($file);
+        $lastModifiedDatetime = date("Ymdi", $lastModifiedTimestamp);
+        return $lastModifiedDatetime;
+    }
+    
+}
+
+
+
+
+
 /**
  * Make grid wrapper
  * usage: gridwrapper({open/close, class})

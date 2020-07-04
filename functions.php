@@ -145,7 +145,7 @@ function newsite_scripts() {
 	
     //CSS
 	wp_enqueue_style( "newsite-uikit", '//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/css/uikit.css', 0, 0, 'screen');
-	wp_enqueue_style( 'newsite-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'newsite-style', get_stylesheet_uri(), 0, esmod_date(), 'screen' );
                     
     // SCRIPT
     wp_deregister_script('jquery');
