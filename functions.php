@@ -9,8 +9,8 @@
 
 if ( ! function_exists( 'newsite_setup' ) ) :
     
-    require( 'support/woocommerce_funcs.php');
-    require( 'support/helper_funcs.php');
+    require 'support/woocommerce_funcs.php';
+    require 'support/helper_funcs.php';
 
 
 	/**

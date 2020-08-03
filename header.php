@@ -59,7 +59,9 @@
                             'theme_location' => 'menu-1',
                             'menu_id'        => 'primary-menu',
                             'container'      => '',
-                            'menu_class'     => 'menu  uk-visible@m'
+                            'menu_class'     => 'menu  uk-visible@m',
+                            'walker'         => new dropdown_menu
+
                         ) );
                         ?>
 

@@ -9,8 +9,8 @@
  * Load files.
  */
  
-require('acf_fields.php');
-require('register-shortcodes.php');
+require 'acf_fields.php';
+require 'register-shortcodes.php';
 
 
 
@@ -106,6 +106,27 @@ function gridwrapper($args=0){
     
 
 }
+
+
+
+/**
+ * This adds uikit classes to main navigation dropdown
+ */
+
+class dropdown_menu extends Walker_Nav_Menu
+{
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<div class='uk-navbar-dropdown' uk-drop='delay-hide: 200'><ul class='sub-menu'>\n";
+    }
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul></div>\n";
+    }
+}
+
+
+
 
 
 
