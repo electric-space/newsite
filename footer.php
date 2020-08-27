@@ -41,6 +41,10 @@
 
 </footer><!-- #colophon -->
 
+<div class="edit-post-link">
+    <?php wp_reset_postdata(); edit_post_link()  ;?>
+</div>
+
 <?php wp_footer(); ?>
 
 <script>$(document).ready(function(){ $('body').addClass('loaded').removeClass('hidden'); });</script>
