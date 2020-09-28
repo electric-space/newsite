@@ -1,7 +1,7 @@
 
 /* THIS CSS WAS COMPILED AND OPTIMIZED, USING THE WP COMPILER PLUGIN */
 /* https://bytes.co */
-/* Last Compiled: 2020-03-25 12:14:38 UTC */
+/* Last Compiled: 2020-09-16 1:05:38 UTC */
 
 /*!
 Theme Name: newsite
@@ -236,6 +236,14 @@ a:hover{
 */
 a.post-edit-link {
   color: #0a0a0a;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999999999;
+  background: #fff;
+  padding: 4px;
+  font-size: 14px;
+  font-family: system-ui;
 }
 a.post-edit-link:hover {
   color: #0a0a0a;
@@ -338,6 +346,7 @@ nav.main-navigation ul.menu li a {
   font-size: 1.6rem;
   line-height: 1;
   color: #084994;
+  white-space: nowrap;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;

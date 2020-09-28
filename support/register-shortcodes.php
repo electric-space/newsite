@@ -1,6 +1,29 @@
 <?php
 
 /**
+ * Method to import a partial via shortcode
+ */
+
+function partial_func(){
+    
+    ob_start();
+
+    get_template_part('{path/to/partial}');
+    
+    $partial .= ob_get_contents();
+    
+    ob_get_clean();
+    
+    return $partial;
+}
+
+add_shortcode('partial', 'partial_func');
+
+
+
+
+
+/**
  * Adds a privacy link
  * Usage = [privacy text="{}" url="{}"]
  */
