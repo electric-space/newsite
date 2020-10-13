@@ -56,7 +56,7 @@
                     <nav id="site-navigation" class="main-navigation uk-flex  uk-flex-middle uk-flex-right">
                         <?php
                         wp_nav_menu( array(
-                            'theme_location' => 'menu-1',
+                            'theme_location' => 'primary_menu',
                             'menu_id'        => 'primary-menu',
                             'container'      => '',
                             'menu_class'     => 'menu  uk-visible@m',
