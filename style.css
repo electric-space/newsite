@@ -1,7 +1,7 @@
 
 /* THIS CSS WAS COMPILED AND OPTIMIZED, USING THE WP COMPILER PLUGIN */
 /* https://bytes.co */
-/* Last Compiled: 2020-09-16 1:05:38 UTC */
+/* Last Compiled: 2020-10-22 10:12:39 UTC */
 
 /*!
 Theme Name: newsite
@@ -243,6 +243,7 @@ a.post-edit-link {
   background: #fff;
   padding: 4px;
   font-size: 14px;
+  line-height: 1;
   font-family: system-ui;
 }
 a.post-edit-link:hover {

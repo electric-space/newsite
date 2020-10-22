@@ -126,18 +126,7 @@ class dropdown_menu extends Walker_Nav_Menu
 }
 
 
-/**
- * Add edit link to wp_footer
- */
 
-function es_edit_link() { 
-    echo '<div class="edit-post-link" style="position:fixed; bottom:0; left:0">';
-        wp_reset_postdata(); edit_post_link();
-    echo '</div>';
-    
-}
-
-add_action('wp_footer', 'es_edit_link'); 
 
 
 

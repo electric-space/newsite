@@ -19,6 +19,36 @@ function my_theme_wrapper_end() {
 
 
 /**
+ * Use these wrappers for a sidebar when the page doesnt have the opening uk-container set
+ 
+    function my_theme_wrapper_start() {
+        echo '<div class="uk-container">
+                <div class="uk-grid" uk-grid>
+                    <div class="uk-width-expand@m uk-align-center uk-margin-remove-bottom uk-flex-last@m">';
+    }
+    
+    function my_theme_wrapper_end() {
+        echo '</div>';
+        get_sidebar('shop');
+        echo '</div>
+            </div>';
+    }
+ 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
  * Get product info on single product page 
  *  global $product;
  *  $terms = get_the_terms( $product->get_id(), 'product_cat' );
