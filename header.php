@@ -81,7 +81,8 @@
     <?php get_template_part('support/partials/slideshow-uikit') ;?>
 
 
-    <main id="main" class="site-main">
+    <main id="main" class="site-main <?php if( is_page() && !is_front_page() ) echo 'inner' ;?>">
+
 
         <div class="uk-container">
             
