@@ -4,11 +4,11 @@
  * Extra functions for functions.php
  */
 
- 
+
 /**
  * Load files.
  */
- 
+
 require 'acf_fields.php';
 require 'register-shortcodes.php';
 
@@ -26,7 +26,7 @@ function get_id($page_slug) {
     } else {
         return null;
     }
-} 
+}
 
 
 /**
@@ -36,34 +36,44 @@ function get_id($page_slug) {
 function get_id_url(){
     $url = '//' . $_SERVER[ 'HTTP_HOST' ] . $_SERVER[ 'REQUEST_URI' ];
     $current_postid = url_to_postid( $url );
-    
+
     return $current_postid;
 }
 
 /**
  * Current page highlight
- * $args (the post/page ID)
+ * $args (the slug)
  */
 
-function get_current_page($args){
+function get_current_page($page_slug){
 
-    $id = get_id_url();
+    $id = get_id($page_slug);
 
-    if( $args == $id ){
+    global $post;
+
+
+
+    if( $post->ID == $id ){
         return 'class="current_page_item"';
-    }else{
+    }
+
+    elseif( is_post_type_archive('gallery_cpt') && $page_slug == 'Gallery' ){
+        return 'class="current_page_item"';
+    }
+
+    else{
         return null;
     }
 
 }
 
 
-/* 
+/*
  * Get file mod date to add to css as query string to help with cache
  * Usage, call esmod_date({filename})
  * Default {style.css}
  */
-     
+
 function esmod_date($file="style.css"){
     if( $file){
         clearstatcache();
@@ -72,7 +82,7 @@ function esmod_date($file="style.css"){
         $lastModifiedDatetime = date("Ymdi", $lastModifiedTimestamp);
         return $lastModifiedDatetime;
     }
-    
+
 }
 
 
@@ -85,25 +95,25 @@ function esmod_date($file="style.css"){
  */
 
 function gridwrapper($args=0){
-    
+
     if( count($args) > 1 )
         $class = $args[1];
     else
         $class = '';
-   
-    
+
+
     if( $args[0] == 'open' ){
         $grid = '<div class="uk-container '.$class.'">';
         $grid .= '<div class="uk-grid" uk-grid>';
     }
-    
+
     if( $args[0] == 'close' ){
         $grid = '</div>';
         $grid .= '</div>';
     }
-    
+
     echo $grid;
-    
+
 
 }
 
@@ -177,19 +187,19 @@ function my_theme_register_required_plugins() {
             'slug'      => 'force-regenerate-thumbnails',
             'required'  => false,
         ),
-        
+
         array(
             'name'      => 'Yoast SEO',
             'slug'      => 'wordpress-seo',
             'required'  => false,
         ),
-        
+
         array(
             'name'      => 'WP Compiler',
             'slug'      => 'wp-compiler',
             'required'  => false,
         ),
-        
+
         array(
             'name'      => 'WP Statistics',
             'slug'      => 'wp-statistics',
@@ -252,17 +262,17 @@ function my_theme_register_required_plugins() {
  * Setup theme options
  *
  */
- 
+
 if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-		));
-	
+
+    acf_add_options_page(array(
+        'page_title'     => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'        => false
+        ));
+
 }
 
 
@@ -270,49 +280,49 @@ if( function_exists('acf_add_options_page') ) {
 /**
  * Clean the head.
  */
- 
+
  function removeHeadLinks() {
-	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wlwmanifest_link');
-	remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'wp_generator');
 }
 add_action('init', 'removeHeadLinks');
- 
- 
- 
+
+
+
 /**
  * Change login logo.
  */
- 
+
 function my_login_head() {
-    
+
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-    
+
     if( $image[0] ){
         $logo = "background-image: url('$image[0]');";
     }else{
         $logo = '';
     }
-    
-    
-	echo "
-	<style>
-	
-	body{
+
+
+    echo "
+    <style>
+
+    body{
         background-color:#fff;
     }
-    
-	body.login #login h1 a {
-		".$logo."
-		background-repeat: no-repeat;
-		width: 100%;
-		margin:0 0 15px 0;
-        background-size:contain;
-	}
 
-	</style>
-	";
+    body.login #login h1 a {
+        ".$logo."
+        background-repeat: no-repeat;
+        width: 100%;
+        margin:0 0 15px 0;
+        background-size:contain;
+    }
+
+    </style>
+    ";
 }
 
 add_action("login_head", "my_login_head");
@@ -333,13 +343,13 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 /**
  * Adds content editor to News page
  */
- 
+
 add_action( 'edit_form_after_title', 'rgc_posts_page_edit_form' );
 function rgc_posts_page_edit_form( $post ) {
-	$posts_page = get_option( 'page_for_posts' );
-	if ( $posts_page === $post->ID ) {
-		add_post_type_support( 'page', 'editor' );
-	}
+    $posts_page = get_option( 'page_for_posts' );
+    if ( $posts_page === $post->ID ) {
+        add_post_type_support( 'page', 'editor' );
+    }
 }
 
 
@@ -374,6 +384,65 @@ function my_mce4_options($init) {
 }
 
 add_filter('tiny_mce_before_init', 'my_mce4_options');
+
+
+
+
+
+
+
+
+
+/*
+ * Add columns to custom_post list
+ * {CPT} = custom post type
+ */
+ 
+ 
+ function add_acf_columns ( $columns ) {
+   return array_merge ( $columns, array ( 
+     'course_start_time' => __ ( 'Start Time'),
+     'course_start'      => __ ( 'Course Starts' ),
+     'course_end'        => __ ( 'Course Ends' )
+   ) );
+ }
+ add_filter ( 'manage_{CPT}_posts_columns', 'add_acf_columns' );
+
+
+
+ /*
+ * Add columns to custom_post post list
+ */
+function cpt_custom_column ( $column, $post_id ) {
+    switch ( $column ) {
+        case 'course_start_time':
+            $time = get_field('course_details', $post_id);
+            if( $time['course_start_time'] ){
+               echo date("H:i", strtotime($time['course_start_time']) ); 
+            }
+            
+            break;
+        
+        case 'course_start':
+            $date = get_field('course_details', $post_id);
+            if( $date['course_start'] ){
+               echo date("d/m/Y", strtotime($date['course_start']) ); 
+            }
+            
+            break;
+        case 'course_end':
+            $date = get_field('course_details', $post_id);
+            if( $date['course_end'] ){
+               echo date("d/m/Y", strtotime($date['course_end']) ); 
+            }
+            break;
+    }
+}
+ 
+ add_action ( 'manage_{CPT}_posts_custom_column', 'cpt_custom_column', 10, 2 );
+
+
+
 
 
 

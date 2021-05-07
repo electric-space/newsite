@@ -11,7 +11,7 @@
         
         <?php if( $layout == 'full_width_image' ): ;?>
         
-            <section class="uk-section  uk-padding-remove <?php echo $ayout ;?>  <?php if($block_class) echo $block_class ;?>" <?php if( $bgcolor ) echo 'style="background-color:'.$bgcolor.'"' ;?>>
+            <section class="uk-section  uk-padding-remove <?php echo $layout ;?>  <?php if($block_class) echo $block_class ;?>" <?php if( $bgcolor ) echo 'style="background-color:'.$bgcolor.'"' ;?>>
                 <div class="uk-cover-container uk-height-large">
                     <?php $img =  get_sub_field('image');?>
                     <img src="<?php echo $img['url'] ;?>" alt="<?php echo $img['alt'] ;?>" uk-cover>
