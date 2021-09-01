@@ -210,6 +210,11 @@ function my_theme_register_required_plugins() {
             'slug'      => 'classic-editor',
             'required'  => false,
         ),
+        array(
+            'name'      => 'Advanced Editor Tools (previously TinyMCE Advanced)',
+            'slug'      => 'tinymce-advanced',
+            'required'  => false,
+        ),
 
     );
 
@@ -387,7 +392,14 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
 
 
 
-
+// Customize mce editor font sizes
+if ( ! function_exists( 'wpex_mce_text_sizes' ) ) {
+    function wpex_mce_text_sizes( $initArray ){
+        $initArray['fontsize_formats'] = "9px 10px 12px 13px 14px 16px 18px 21px 24px 25px 28px 32px 34px 36px 50px 60px 120px";
+        return $initArray;
+    }
+}
+add_filter( 'tiny_mce_before_init', 'wpex_mce_text_sizes' );
 
 
 
@@ -406,7 +418,8 @@ add_filter('tiny_mce_before_init', 'my_mce4_options');
      'course_end'        => __ ( 'Course Ends' )
    ) );
  }
- add_filter ( 'manage_{CPT}_posts_columns', 'add_acf_columns' );
+
+//add_filter ( 'manage_{CPT}_posts_columns', 'add_acf_columns' );
 
 
 
@@ -439,7 +452,7 @@ function cpt_custom_column ( $column, $post_id ) {
     }
 }
  
- add_action ( 'manage_{CPT}_posts_custom_column', 'cpt_custom_column', 10, 2 );
+//add_action ( 'manage_{CPT}_posts_custom_column', 'cpt_custom_column', 10, 2 );
 
 
 
